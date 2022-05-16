@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+#__next {
+  /* margin-top: 6rem; */
+  min-height: 100vh;
+  width: 100vw;
+}
+* {
+  box-sizing: border-box;
+}
+
+main {
+  padding-top: 6rem;
+}
+
+*[data-animation="ripple"]::selection {
+	background: transparent;
+	/* pointer-events: none; */
+}
+
+header {
+	backdrop-filter: blur(10px);
+	background: #00a3ac
+}
+
+.transparent {
+  backgorund: #00366600;
+}
+
+.carousel {
+  display: inline-flex;
+  overflow-x: hidden;
+/*  scroll snap is a great feature which will center the image on snap on touch screen devices  */
+  scroll-snap-type: x mandatory;
+/* all below will hide the scrollbar on all browsers.    */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
