@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react"
 import { navRoutes } from "./nav";
 
 export default function Hamburger() {
+    const router = useRouter()
     const [open, setOpen] = useState(false);
     const handleOpen = () => {
         setOpen(!open);
@@ -27,14 +29,17 @@ export default function Hamburger() {
             }}>
                 {
                     navRoutes.map(({name, href}, index) => (
-                        <Link passHref href={href} key={`nav-${index}`} >
+                        <div onClick={() => {
+                            router.push(href);
+                            setOpen(false)
+                        }} key={`nav-${index}`} >
                             <div
                                 style={{
                                     textDecorationSkipInk : "none",
                                 }}
-                                className="nav-div p-4 text-white rounded-lg text-xl cursor-pointer h-[60px] underline decoration-[#00a3ac] decoration-[4px] underline-offset-1"
+                                className="nav-div p-4 text-white rounded-lg text-3xl cursor-pointer h-[80px] decoration-[4px] underline-offset-1"
                             >{name}</div>
-                        </Link>
+                        </div>
                     ))
                 }
             </div>

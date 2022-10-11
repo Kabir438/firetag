@@ -15,13 +15,13 @@ export default function NotSupported({
             className="w-full h-full absolute z-[9999999999999999999999]"
             >
             <div
-                className="dialog w-96 absolute p-5 flex flex-col justify-center items-center z-[999999999999999999999999]"
+                className="dialog w-96 absolute p-5 bg-[rgba(31,31,31,0.46)] flex flex-col justify-center items-center z-[999999999999999999999999]"
                 style={{
                     left: "50%",
                     top: "50%",
                     transform: "translate(-50%, -50%)",
-                    background: "rgb(0 48 255 / 25%)",
-                    boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+                    // background: "rgb(0 48 255 / 25%)",
+                    boxShadow: "0 8px 32px 0 rgba(31,38,135,0.37)",
                     backdropFilter: "blur( 5px )",
                     WebkitBackdropFilter: "blur( 5px )",
                     borderRadius: "10px",
@@ -39,10 +39,10 @@ export default function NotSupported({
                 <button
                     id="cross"
                     onClick={() => setOpen(false)}
-                    className="absolutew w-8 h-8 rounded-full hover:backdrop-brightness-50"
+                    className="absolutew w-8 h-8 rounded-full hover:backdrop-brightness-50 text-[whitesmoke]"
                     style={{
-                    background: "rgb(0 48 255 / 25%)",
-                    boxShadow: "inset 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+                    background: "#28282840",
+                    boxShadow: "inset 0 8px 32px 0 #0000008f",
                     backdropFilter: "blur( 5px )",
                     WebkitBackdropFilter: "blur( 5px )",
                     border: "1px solid rgba( 255, 255, 255, 0.18 )",
@@ -52,7 +52,7 @@ export default function NotSupported({
                 </button>
                 </div>
                 <Image src="/error.png" alt="error" height={125} width={125}></Image>
-                <h1 className="text-center z-[9999999999999999999999]" style={{zIndex: 9999999999999999999999}}>
+                <h1 className="text-center text-[whitesmoke] z-[9999999999999999999999]" style={{zIndex: 9999999999999999999999}}>
                 Could not get your current location. Please recheck your browser
                 settings.
                 </h1>

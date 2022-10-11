@@ -12,6 +12,9 @@ import Details from "../elements/details";
 import useMergeState from "../hooks/useMergeState";
 import Head from "next/head";
 import { useLoading } from "../hooks/useLoading";
+import { useRecoilState } from "recoil";
+import { coords } from "../state/coords";
+import { autocomplete as autocompleteAtom } from "../state/autocomplete";
 
 const libraries: any = ["places"];
 
@@ -27,12 +30,9 @@ const containerStyle = (x: number) => ({
 
 export default function Home() {
   const [loading, setLoading] = useLoading();
-  const [map, setMap] = useState<google.maps.Map | null>();
+  const [map, setMap] = useState<any | null>();
   const [open, setOpen] = useState<boolean>(false);
-  const [
-    autocomplete,
-    setAutocomplete,
-  ] = useState<google.maps.places.Autocomplete | null>(null);
+  const [autocomplete, setAutocomplete] = useState<any>(null);
   const [getDetails, setGetDetails] = useState<boolean>(false);
   const [slug, setSlug] = useState<string | null>(null);
   const [zoom, setZoom] = useState<number>(2);
@@ -77,7 +77,7 @@ export default function Home() {
   const [[latitude, longitude], setCoords]: [
     [null | number, null | number],
     React.Dispatch<React.SetStateAction<[number, number] | [null, null]>>
-  ] = useState<[number, number] | [null, null]>([null, null]);
+  ] = useRecoilState(coords);
   const [center, setCenter]: [
     [null | number, null | number],
     React.Dispatch<React.SetStateAction<[number, number]>>
@@ -96,6 +96,12 @@ export default function Home() {
   };
 
   useEffect(() => {
+    if (latitude && longitude) {
+      setGetDetails(true);
+    }
+  }, [latitude, longitude]);
+
+  useEffect(() => {
     setDimensions({
       y: window.innerHeight,
       x: window.innerWidth,
@@ -112,31 +118,48 @@ export default function Home() {
     if (longitude && latitude) {
       transitionZoom();
       const slug = generateSlug();
-      
-      setData({
-        date: new Date().toLocaleDateString(),
-        city: autocomplete?.getPlace()?.name,
-        slug: slug,
-        time: new Date().toLocaleTimeString(),
-        dateAndTime: `${new Date().toLocaleDateString()}, ${new Date().toLocaleTimeString()}`,
-        location: JSON.stringify([latitude, longitude]),
-      });
-      setSlug(slug);
+      let city = null;
+
+      if (autocomplete?.getPlace()?.name) {
+        city = autocomplete?.getPlace()?.name;
+        setData({
+          date: new Date().toLocaleDateString(),
+          city: city,
+          slug: slug,
+          time: new Date().toLocaleTimeString(),
+          dateAndTime: `${new Date().toLocaleDateString()}, ${new Date().toLocaleTimeString()}`,
+          location: JSON.stringify([latitude, longitude]),
+        });
+        setSlug(slug);
+      } else {
+        var requestOptions = {
+          method: "GET",
+        };
+
+        fetch(
+          `https://api.geoapify.com/v1/geocode/reverse?lat=${latitude}&lon=${longitude}&apiKey=1318a3cb4a604b0ab740c44e7c45f782`,
+          requestOptions
+        )
+          .then((response) => response.json())
+          .then((result) => {
+            city = result.features[0].properties.city;
+
+            setData({
+              date: new Date().toLocaleDateString(),
+              city: city,
+              slug: slug,
+              time: new Date().toLocaleTimeString(),
+              dateAndTime: `${new Date().toLocaleDateString()}, ${new Date().toLocaleTimeString()}`,
+              location: JSON.stringify([latitude, longitude]),
+            });
+            setSlug(slug);
+          });
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [longitude, latitude]);
   const transitionZoom = () => {
-    const interval = 0.1;
-    setTimeout(() => {
-      for (let i = zoom; i <= 22 + interval; i += interval) {
-        setTimeout(() => {
-          setZoom(i);
-          if (Math.floor(i) === 22) {
-            setGetDetails(true);
-          }
-        }, i * 700);
-      }
-    }, 0);
+    setZoom(22);
     // setGetDetails(true)
   };
   // const switchLabelsOn = () => {
@@ -204,12 +227,14 @@ export default function Home() {
               {/* Child components, such as markers, info windows, etc. */}
               <div
                 id="search"
-                className={`w-screen h-8 z-[9999999999]`}
+                className={`w-screen h-max z-[9999999999]`}
                 style={{ zIndex: 9999999999 }}
               >
                 <Autocomplete
+                  className="md:block sm:block lg:hidden xl:hidden xs:block w-auto h-auto"
                   onLoad={(i) => setAutocomplete(i)}
                   onPlaceChanged={() => {
+                    console.log("auto complete", autocomplete);
                     if (autocomplete) {
                       console.log(autocomplete.getPlace());
                       const coordinates: [number, number] = [
@@ -224,7 +249,7 @@ export default function Home() {
                     <input
                       type="text"
                       placeholder="Search"
-                      className="placeholder:text-white transition-all bg-[#00a4ac94] focus:bg-[#00a4ac]"
+                      className="placeholder:text-white transition-all bg-[#2f303894] focus:bg-[#2f3038b5] md:ml-[-25vw] sm:ml-[-25vw] lg:ml-[-50vw] xl:ml-[-50vw] xs:ml-[-50vw]"
                       style={{
                         boxSizing: `border-box`,
                         border: `1px solid transparent`,
@@ -237,7 +262,7 @@ export default function Home() {
                         textOverflow: `ellipses`,
                         position: "absolute",
                         left: "50%",
-                        marginLeft: "-25vw",
+                        // marginLeft: "-25vw",
                         transform:
                           dimensions.x < 750 ? `translateY(-32px)` : "",
                         zIndex: "9999",
@@ -253,10 +278,22 @@ export default function Home() {
               )}
               <button
                 onClick={onClick}
-                className="bg-[#00a3ac] absolute pl-2 pr-2 pt-3 pb-3 bottom-6 hover:bg-[#035f7b] rounded-[8px] transition-all text-white font-bold text-base"
+                className="bg-[hsl(0,0%,15%)] xl:block lg:block md:block xs:hidden sm:hidden absolute pl-4 pr-4 pt-5 pb-5 hover:bg-[hsl(0,0%,25%)] rounded-[5px] transition-all text-white font-bold text-base font-openSans"
                 style={{
                   left: "calc(50vw - 5.125rem)",
-                  bottom: dimensions.x < 750 ? "45px" : "",
+                  position: "absolute",
+                  bottom: "16px"
+                }}
+              >
+                Share my Location
+              </button>
+              <button
+                onClick={onClick}
+                className="bg-[hsl(0,0%,15%)] xl:hidden lg:hidden md:hidden xs:block sm:block absolute pl-4 pr-4 pt-3 pb-3 hover:bg-[hsl(0,0%,25%)] rounded-[5px] transition-all text-white font-bold text-base font-openSans"
+                style={{
+                  left: "calc(100vw - 2 * 5.125rem)",
+                  position: "absolute",
+                  top: "-32px"
                 }}
               >
                 Share my Location

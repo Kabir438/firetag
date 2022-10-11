@@ -41,7 +41,7 @@ export default function Input({
         Your location is at {place}
       </h2>}
       <h3 className="text-white text-xl">
-        Please entere the following details:
+        Please enter the following details:
       </h3>
       <div className="input-container">
         <input
@@ -136,7 +136,7 @@ export default function Input({
         </label>
       </div>
       <div className="flex items-center justify-between w-full">
-        <button type={"submit"} className="bg-[#00a3ac] w-1/2 p-4 pt-2 pb-2 hover:bg-[#035f7b] rounded-[8px] transition-all text-white font-bold text-base" style={{width: "100%"}}>
+        <button type={"submit"} className="bg-[#c3c3c3] font-openSans text-xl hover:bg-[#9e9e9e] text-black w-1/2 p-4 pt-2 pb-2 rounded-[5px] transition-all font-bold" style={{width: "100%"}}>
           Next
         </button>
       </div>

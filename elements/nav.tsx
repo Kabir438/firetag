@@ -17,8 +17,8 @@ export const navRoutes = [
     name: "Portal",
   },
   {
-    href: "/contact-us",
-    name: "Contact Us",
+    href: "/support-us",
+    name: "Support Us",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function Nav({ slug }: { slug: string }) {
         console.log("?", slug);
         calculatedPreLocation = true;
         break;
-      case "/contact-us":
+      case "/support-us":
         preLocation = 4;
         calculatedPreLocation = true;
         break;
@@ -90,7 +90,7 @@ export default function Nav({ slug }: { slug: string }) {
   return (
     <>
       <nav
-        className={`flex flex-col ${router.asPath === "/" ? 'mt-3' : ''} p-4 text-white z-[100000] fixed w-screen items-center justify-center`}
+        className={`flex flex-col p-4 text-white z-[100000] fixed w-screen items-center justify-center`}
       >
         <div
           id="container"
@@ -131,14 +131,14 @@ export default function Nav({ slug }: { slug: string }) {
             </div>
           ))}
         </div>
-        {router.asPath === "/" && <h1 className="pb-3 text-lg">Press on share my location to report a fire</h1>}
+        {/* {router.asPath === "/" && <h1 className="pb-3 text-lg">Press on share my location to report a fire</h1>} */}
       </nav>
       <div
-        className={`fixed w-[452px] h-1 ${router.asPath === "/" ? 'translate-y-1' : 'translate-y-3'}`}
+        className={`fixed w-[452px] h-1 ${'translate-y-3'}`}
         style={{ margin: "0 calc((100vw - 452px)/2)" }}
       >
         <div
-          className="transition-all ease-squared duration-300 bg-[#06d9e5] h-full translate-x-[1px]"
+          className="transition-all ease-squared rounded-[4px] bg-[#f3e3e3] h-full translate-x-[1px]"
           id="bar"
           style={{
             width: `${widths[location] ?? 0}px`,

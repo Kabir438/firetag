@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kdam+Thmor+Pro&family=Libre+Baskerville&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kdam+Thmor+Pro&family=Libre+Baskerville&family=Poppins&display=swap&family=Open+Sans:wght@300&display=swap');
 /* @import "./z-index.css" */
 @tailwind base;
 @tailwind components;
@@ -166,12 +166,12 @@ header.moreBackdropFilter {
   overflow: visible !important;
 }
 
-.details  input, textarea {
+.details input, textarea {
   z-index: 9999999999999999999999;
   width: 100%;
   padding: 5px;
   border-radius: 7.5px;
-  background: rgb(0, 22, 74);
+  background: hsla(0, 0%, 8%, 0.916);
   transition: all 0.4s ease-in-out, background-color 9999999999999999999999s linear, color 9999999999999999999999s linear;
   color: whitesmoke;
   padding-left: 7.5px;
@@ -184,7 +184,7 @@ header.moreBackdropFilter {
 }
 
 .details input:focus-within, textarea:focus-within {
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+  box-shadow: 0 0 0 3px #ffeee799;
 }
 
 .details div {
@@ -207,8 +207,8 @@ header.moreBackdropFilter {
   top: -0.95em;
   left: 0.05em;
   background: transparent;
-  color: white;
-  background: rgba(0, 63, 167, 32%);
+  color: whitesmoke;
+  background: hsla(0, 0%, 8%, 0.916);
   border-radius: 15px;
   padding: 0px 0.3em 0px 0.3em
 }
@@ -316,7 +316,7 @@ h1.login-text {
   width: 100%;
   padding: 5px;
   border-radius: 7.5px;
-  background: rgb(0, 22, 74);
+  background: hsla(0, 0%, 8%, 0.916);
   transition: all 0.4s ease-in-out, background-color 9999999999999999999999s linear, color 9999999999999999999999s linear;
   color: whitesmoke;
   padding-left: 7.5px;
@@ -329,7 +329,7 @@ h1.login-text {
 }
 
 .login-main input:focus-within, textarea:focus-within {
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+  box-shadow: 0 0 0 3px #ffeee799;
 }
 
 .login-main div {
@@ -340,8 +340,8 @@ h1.login-text {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 29rem;
-  height: 29rem;
+  width: calc(100% * 0.96);
+  height: calc(100% * 0.96);
   margin: 8px;
   border: 18px solid #04c5d0;
   border-radius: 50%;

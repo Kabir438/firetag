@@ -1,12 +1,7 @@
 import { FormEvent } from "react";
-import { login } from "../utils/auth"
 
 export default function Login() {
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const [email, password] = [e.target[0].value, e.target[1].value]
-    login(email, password)
-  }
+  
   return (
     <main className="w-screen overflow-hidden pt-0" style={{height: "calc(100vh)"}}>
         <section className="absolute w-full h-full" style={{height: "calc(100vh)"}}>
@@ -31,7 +26,7 @@ export default function Login() {
                     </div>
                   </div>
                   <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={() => {}}>
                       <div className="relative w-full mb-3">
                         <label
                           className="block uppercase text-gray-700 text-xs font-bold mb-2"

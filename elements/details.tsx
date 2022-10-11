@@ -46,12 +46,12 @@ export default function Details({
             >
                 <Success open={showSuccess} setOpen={setShowSuccess}/>
                 <div
-                    className="details dialog w-[48rem] absolute p-5 flex flex-col justify-center items-center"
+                    className="details dialog w-[90vw] max-w-[48rem] absolute p-5 flex flex-col justify-center items-center"
                     style={{
                         left: "50%",
                         top: "50%",
                         transform: "translate(-50%, -50%)",
-                        background: "rgb(0 48 255 / 25%)",
+                        background: "#0000008c",
                         boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
                         backdropFilter: "blur( 5px )",
                         WebkitBackdropFilter: "blur( 5px )",

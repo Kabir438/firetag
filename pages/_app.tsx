@@ -24,8 +24,8 @@ function MyApp({ Component, pageProps }) {
         {title && <title>{title}</title>}
       </Head>
       <NextProgress delay={0} options={{ showSpinner: false }} />
-      <Header blur={blur} transparent={transparent}/>
       <RecoilRoot>
+        <Header blur={blur} transparent={transparent}/>
         <Loading/>
         <Component {...pageProps} />
       </RecoilRoot>

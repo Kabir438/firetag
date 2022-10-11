@@ -1,18 +1,36 @@
+import { Autocomplete, LoadScript } from "@react-google-maps/api";
 import Image from "next/image";
 import Link from "next/link";
 import router, { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
+import { coords } from "../state/coords";
 import empty from "../utils/empty";
 import Hamburger from "./hamburger";
 import Nav from "./nav";
 
-export default function Header({ transparent, blur }: { transparent: boolean, blur: number | null }) {
+const libraries: any = ["places"];
+
+export default function Header({
+  transparent,
+  blur,
+}: {
+  transparent: boolean;
+  blur: number | null;
+}) {
   const router = useRouter();
   const [dimensions, setDimensions] = useState({
     y: 0,
     x: 0,
   });
-
+  const [[latitude, longitude], setCoords]: [
+    [null | number, null | number],
+    React.Dispatch<React.SetStateAction<[number, number] | [null, null]>>
+  ] = useRecoilState(coords);
+  const [
+    autocomplete,
+    setAutocomplete,
+  ] = useState<any>(null)
   useEffect(function () {
     setDimensions({
       y: window.innerHeight,
@@ -24,14 +42,16 @@ export default function Header({ transparent, blur }: { transparent: boolean, bl
         x: window.innerWidth,
       });
     });
-    if(transparent) {
+    if (transparent) {
       document.addEventListener("scroll", (e) => {
-        empty()
+        empty();
         const scroll = window.scrollY;
         if (scroll !== 0) {
           document.querySelector("header").classList.add("moreBackdropFilter");
         } else if (scroll === 0) {
-          document.querySelector("header").classList.remove("moreBackdropFilter")
+          document
+            .querySelector("header")
+            .classList.remove("moreBackdropFilter");
         }
       });
     } else {
@@ -42,18 +62,20 @@ export default function Header({ transparent, blur }: { transparent: boolean, bl
           document.querySelector("header").style.backgroundColor = "#00366600";
         } else if (scroll === 0) {
           document.querySelector("header").style.backgroundColor =
-            "rgb(22 28 36 / var(--tw-bg-opacity))";
+            "#000000";
         }
       });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(blur, "blur")
+  console.log(blur, "blur");
   return (
     <>
       <header
-        style={{ zIndex: 99999, backdropFilter: `blur(${blur || 10}px)`}}
-        className={`h-24 transition-all z-[99999] w-full ${transparent ? 'bg-transparent' : 'bg-[#161c24]'} border-b-[3px] ${router.asPath === "/" ? "border-[#00a4ac94]" : "border-[#00a3ac]"} fixed flex items-center justify-between`}
+        style={{ zIndex: 999, backdropFilter: `blur(${blur || 10}px)` }}
+        className={`bg-[hsl(0,0%,8%)] h-24 transition-all z-[99999] w-full ${
+          transparent ? "bg-transparent" : "bg-[#161c24]"
+        } border-b-[3px] ${""} fixed flex items-center justify-between`}
       >
         <button
           id="logo-button"
@@ -76,8 +98,8 @@ export default function Header({ transparent, blur }: { transparent: boolean, bl
         </button>
         {dimensions.x < 750 ? (
           <>
-            <button
-              className="bg-[#00a3ac] cursor-pointer mr-4 hover:bg-[#035f7b cursor-pointer rounded-[8px] transition-all text-white font-bold text-base"
+            {/* <button
+              className="bg-[#00a3ac] mr-4 rounded-[8px] hover:bg-[#035f7b] cursor-pointer transition-all text-white font-bold text-base"
               onClick={() => router.replace("/login")}
             >
               <div
@@ -86,23 +108,79 @@ export default function Header({ transparent, blur }: { transparent: boolean, bl
               >
                 Login
               </div>
-            </button>
+            </button> */}
             <Hamburger />
           </>
         ) : (
           <>
             <Nav slug={router.asPath.toLocaleLowerCase()}></Nav>
-            <button
-              className="bg-[#00a3ac] z-[100001] mr-4 hover:bg-[#035f7b cursor-pointer rounded-[8px] transition-all text-white font-bold text-base"
-              onClick={() => router.replace("/login")}
-            >
+
+            <div className="right h-full w-auto flex justify-end items-center">
+              {router.route === "/" && 
               <div
-                className={`w-full h-full pt-2 pb-2 pr-5 pl-5 rounded-[8px]`}
-                data-animation="ripple"
+                id="search"
+                className={`h-fit mr-4`}
+                style={{ zIndex: "100001" }}
               >
-                Login
-              </div>
-            </button>
+                <LoadScript
+                  libraries={libraries}
+                  googleMapsApiKey="AIzaSyBqLfqHgU-hMDHhorIB_t7xPleMpT9scqo"
+                >
+                  <Autocomplete
+                  className="md:hidden sm:hidden lg:block xl:block xs:block"
+                  onLoad={(i) => setAutocomplete(i)}
+                  onPlaceChanged={() => {
+                    if (autocomplete) {
+                      console.log(autocomplete.getPlace());
+                      const coordinates: [number, number] = [
+                        autocomplete.getPlace().geometry?.location.lat(),
+                        autocomplete.getPlace().geometry?.location.lng(),
+                      ];
+                      setCoords(coordinates);
+                    }
+                  }}
+                  >
+                    <>
+                      <input
+                        type="text"
+                        placeholder="Search"
+                        className="placeholder:text-white font-bold text-base font-openSans pt-2 pb-2 pr-3 pl-3 transition-all bg-[#303030] focus:bg-[#454545]"
+                        style={{
+                          boxSizing: `border-box`,
+                          border: `1px solid transparent`,
+                          // width: `50vw`,
+                          height: `auto`,
+                          borderRadius: `5px`,
+                          fontSize: `17.5px`,
+                          outline: `none`,
+                          textOverflow: `ellipses`,
+                          // position: "absolute",
+                          // left: "50%",
+                          // marginLeft: "-25vw",
+                          // transform:
+                          //   dimensions.x < 750 ? `translateY(-32px)` : "",
+                          zIndex: "100001",
+                          color: "whitesmoke",
+                          backdropFilter: "blur(15px)",
+                        }}
+                      />
+
+                    </>
+                  </Autocomplete>
+                </LoadScript>
+              </div>}
+              {/* <button
+                className="bg-[#303030] hover:bg-[#454545] rounded-[5px] z-[100001] mr-4 cursor-pointer h-min transition-all text-white font-bold text-base font-openSans"
+                onClick={() => router.replace("/login")}
+              >
+                <div
+                  className={`w-full h-min pt-2 pb-2 pr-5 pl-5 rounded-[5px]`}
+                  data-animation="ripple"
+                >
+                  Login
+                </div>
+              </button> */}
+            </div>
           </>
         )}
       </header>
