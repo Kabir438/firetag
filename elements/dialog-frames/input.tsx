@@ -48,6 +48,7 @@ export default function Input({
           type="text"
           name="name"
           id="name"
+          required
           ref={nameRef}
           onChange={(e) =>
             e.target.value.trim()
@@ -70,6 +71,7 @@ export default function Input({
           type="email"
           name="email"
           id="email"
+          required
           ref={emailRef}
           onChange={(e) =>
             e.target.value.trim()
@@ -92,6 +94,7 @@ export default function Input({
           type="tel"
           name="tel"
           id="tel"
+          required
           max={10}
           ref={telRef}
           onChange={(e) =>

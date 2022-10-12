@@ -265,7 +265,7 @@ export default function Home() {
                         // marginLeft: "-25vw",
                         transform:
                           dimensions.x < 750 ? `translateY(-32px)` : "",
-                        zIndex: "9999",
+                        zIndex: "99",
                         color: "whitesmoke",
                         backdropFilter: "blur(15px)",
                       }}

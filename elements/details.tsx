@@ -3,6 +3,7 @@ import Image from "next/image";
 import Input from "./dialog-frames/input";
 import Media from "./dialog-frames/media";
 import Success from "./views/success";
+import { useRouter } from "next/router";
 
 
 export default function Details({
@@ -23,6 +24,7 @@ export default function Details({
     slug: null | string;
     place: null | string;
 }) {
+    const router = useRouter();
     const [ showSuccess, setShowSuccess ] = useState(false);
     const [ media, setMedia ] = useState(false);
     useEffect(() => {
@@ -31,11 +33,12 @@ export default function Details({
     useEffect(() => {
         if(showSuccess) {
             setTimeout(() => {
-                setShowSuccess(false)
+                setShowSuccess(false);
+                router.reload()
             }, 10*1000)
         }
         console.log("showing sucess", showSuccess)
-    }, [showSuccess])
+    }, [router, showSuccess])
     if(media||open) {
         console.log("showing sucess", showSuccess)
         return (

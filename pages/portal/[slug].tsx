@@ -114,7 +114,7 @@ export default function Slug({
             {/* space */}
             <div className="h-3 w-3 inline-block"></div>
             <a target="_blank" rel="noreferrer" href={`https://www.google.com/maps/place/${JSON.parse(location)[0]},${JSON.parse(location)[1]}`}>
-            <div className="inline-block text-2xl text-[#0686fd] cursor-pointer hover:text-[#0648fd] active:text-[#032480] transition-all">
+            <div className="inline-block text-2xl text-[#0686fd] cursor-pointer hover:text-[#0648fd] active:text-[#032480] transition-all max-w-full" style={{wordWrap: 'break-word'}}>
                 {`https://www.google.com/maps/place/${JSON.parse(location)[0]},${JSON.parse(location)[1]}`}
             </div>
             </a>
