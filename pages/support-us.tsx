@@ -93,4 +93,4 @@ export default function About() {
   );
 }
 
-About.title = `Firetag - About Us`;
+About.title = `Firetag - Support Us`;

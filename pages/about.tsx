@@ -113,7 +113,7 @@ function Section1() {
 //     )
 // }
 
-About.title = `Firetag - About Us`;
+About.title = `Firetag - Support Us`;
 
 function First() {
   return (

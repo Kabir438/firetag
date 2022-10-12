@@ -15,6 +15,7 @@ import { useLoading } from "../hooks/useLoading";
 import { useRecoilState } from "recoil";
 import { coords } from "../state/coords";
 import { autocomplete as autocompleteAtom } from "../state/autocomplete";
+import { useRouter } from "next/router";
 
 const libraries: any = ["places"];
 
@@ -30,6 +31,7 @@ const containerStyle = (x: number) => ({
 
 export default function Home() {
   const [loading, setLoading] = useLoading();
+  const router = useRouter();
   const [map, setMap] = useState<any | null>();
   const [open, setOpen] = useState<boolean>(false);
   const [autocomplete, setAutocomplete] = useState<any>(null);
@@ -63,6 +65,12 @@ export default function Home() {
     y: 0,
     x: 0,
   });
+
+  useEffect(() => {
+    if(router.pathname !== "/") {
+      setGetDetails(false)
+    }
+  }, [router, router.pathname])
 
   useEffect(() => {
     if (!getDetails && data?.hasOwnProperty("name")) {

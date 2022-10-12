@@ -1,5 +1,6 @@
 import moment from "moment";
 import { GetServerSidePropsContext } from "next";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import {
   CartesianGrid,
@@ -69,6 +70,9 @@ export default function Location({
 
   return (
     <>
+    <Head>
+      <title>{location} Statistics</title>
+    </Head>
       <main className="w-screen h-screen flex-col overflow-hidden bg-[#161c24] flex items-center justify-center">
         <h2 className="text-white text-3xl mb-4">{`${location} Statistics`}</h2>
         {
