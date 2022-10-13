@@ -16,47 +16,78 @@ export default function About() {
             lineHeight: 1.3333333333333333,
             fontSize: "2.5rem",
             color: "white",
-            textAlign: "center"
+            textAlign: "center",
           }}
         >
           A Small But Great Team
         </h1>
-        <p 
-            style={{
-                lineHeight: 1.75,
-                fontSize: "1rem",
-                fontFamily: "Poppins, sans-serif",
-                fontWeight: 400,
-                color: "rgb(145, 158, 171)",
-                maxWidth: "480px",
-                textAlign: "center"
-            }}
-            className=""
-        >
-            Since wire-frame renderings are relatively simple and fast to calculate, they are often used in cases
-        </p>
         <div className="flex-wrap flex mt-6 justify-center items-center gap-[20px]">
-            <div className="w-[300px] h-[400px] flex flex-col justidy-center items-start hover:scale-95 transition-all ease-in-out">
-                <Image className="rounded-xl" width={576/1.5} height={754/1.5} src="/amrit.jpeg" alt="amrit"></Image>
-                <div className="w-[300px] h-[400px] opacity-0 hover:opacity-100 rounded-xl absolute pb-8 bg-[black] flex flex-col items-center justify-end" style={{background: "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 95%)", transition: "opacity 250ms cubic-bezier(0.4, 0, 0.6, 1) 0ms"}}>
-                    <h1 className="w-full text-center text-[antiquewhite] text-2xl">Lorem</h1>
-                    <h2 className="w-full text-center text-[whitesmoke] text-xl">Lorem, ipsum.</h2>
-                </div>
+          <div className="w-[300px] h-[400px] flex flex-col justidy-center items-start hover:scale-95 transition-all ease-in-out">
+            <Image
+              className="rounded-xl"
+              width={576 / 1.5}
+              height={754 / 1.5}
+              src="/amrit.jpeg"
+              alt="amrit"
+            ></Image>
+            <div
+              className="w-[300px] h-[400px] opacity-0 hover:opacity-100 rounded-xl absolute pb-8 bg-[black] flex flex-col items-center justify-end"
+              style={{
+                background:
+                  "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 95%)",
+                transition: "opacity 250ms cubic-bezier(0.4, 0, 0.6, 1) 0ms",
+              }}
+            >
+              <h1 className="w-full text-center text-[antiquewhite] text-2xl">
+                Lorem
+              </h1>
+
             </div>
-            <div className="w-[300px] h-[400px] flex flex-col justidy-center items-start hover:scale-95 transition-all ease-in-out">
-                <Image className="rounded-xl" width={733/1.5} height={1008/1.5} src="/kabir.jpeg" alt="kabir"></Image>
-                <div className="w-[300px] h-[400px] opacity-0 hover:opacity-100 rounded-xl absolute pb-8 bg-[black] flex flex-col items-center justify-end" style={{background: "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 95%)", transition: "opacity 250ms cubic-bezier(0.4, 0, 0.6, 1) 0ms"}}>
-                    <h1 className="w-full text-center text-[antiquewhite] text-2xl">Lorem</h1>
-                    <h2 className="w-full text-center text-[whitesmoke] text-xl">Lorem, ipsum.</h2>
-                </div>
+          </div>
+          <div className="w-[300px] h-[400px] flex flex-col justidy-center items-start hover:scale-95 transition-all ease-in-out">
+            <Image
+              className="rounded-xl"
+              width={733 / 1.5}
+              height={1008 / 1.5}
+              src="/kabir.jpeg"
+              alt="kabir"
+            ></Image>
+            <div
+              className="w-[300px] h-[400px] opacity-0 hover:opacity-100 rounded-xl absolute pb-8 bg-[black] flex flex-col items-center justify-end"
+              style={{
+                background:
+                  "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 95%)",
+                transition: "opacity 250ms cubic-bezier(0.4, 0, 0.6, 1) 0ms",
+              }}
+            >
+              <h1 className="w-full text-center text-[antiquewhite] text-2xl">
+                Lorem
+              </h1>
+
             </div>
-            <div className="w-[300px] h-[400px] flex flex-col justidy-center items-start hover:scale-95 transition-all ease-in-out">
-                <Image className="rounded-xl" width={591/1.5} height={796/1.5} src="/tejas.jpeg" alt="tejas"></Image>
-                <div className="w-[300px] h-[400px] opacity-0 hover:opacity-100 rounded-xl absolute pb-8 bg-[black] flex flex-col items-center justify-end" style={{background: "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 95%)", transition: "opacity 250ms cubic-bezier(0.4, 0, 0.6, 1) 0ms"}}>
-                    <h1 className="w-full text-center text-[antiquewhite] text-2xl">Lorem</h1>
-                    <h2 className="w-full text-center text-[whitesmoke] text-xl">Lorem, ipsum.</h2>
-                </div>
+          </div>
+          <div className="w-[300px] h-[400px] flex flex-col justidy-center items-start hover:scale-95 transition-all ease-in-out">
+            <Image
+              className="rounded-xl"
+              width={591 / 1.5}
+              height={796 / 1.5}
+              src="/tejas.jpeg"
+              alt="tejas"
+            ></Image>
+            <div
+              className="w-[300px] h-[400px] opacity-0 hover:opacity-100 rounded-xl absolute pb-8 bg-[black] flex flex-col items-center justify-end"
+              style={{
+                background:
+                  "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 95%)",
+                transition: "opacity 250ms cubic-bezier(0.4, 0, 0.6, 1) 0ms",
+              }}
+            >
+              <h1 className="w-full text-center text-[antiquewhite] text-2xl">
+                Lorem
+              </h1>
+
             </div>
+          </div>
         </div>
       </div>
     </>
@@ -83,17 +114,16 @@ function Section1() {
               lineHeight: 1.3333333333333333,
             }}
           >
-            Who are we?
+            Our Aim
           </h1>
           <p className="mb-[40px] mt-[24px] leading-[1.75] text-[1rem] font-[400] font-poppins text-[rgb(145,158,171)]">
-            Vivamus consectetuer hendrerit lacus. Curabitur a felis in nunc
-            fringilla tristique. Nulla neque dolor, sagittis eget, iaculis quis,
-            molestie non, velit.
-            <br />
-            <br />
-            Nam pretium turpis et arcu. Praesent porttitor, nulla vitae posuere
-            iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum.
-            Praesent venenatis metus at tortor pulvinar varius.
+            The aim and focus of this project lies in establishing a rigid
+            structure to draw out an explicit connection between the populace,
+            the government and response teams. We intend to create an
+            environment with a special focus on the public and cater to their
+            request, since no such robust system exists which provides such ease
+            to the populous in terms of ease of user interface and accessibility
+            to the emergency services
           </p>
         </div>
       </section>
@@ -132,8 +162,7 @@ function First() {
           height: "100vh",
         }}
       >
-        <Image src="/logo.png" alt="logo" width="158.4"
-            height="80" />
+        <Image src="/logo.png" alt="logo" width="158.4" height="80" />
         <h1
           style={{ fontFamily: "'Poppins'" }}
           className="text-[3.5rem] text-center mt-4"
