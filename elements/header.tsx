@@ -79,7 +79,7 @@ export default function Header({
       >
         <button
           id="logo-button"
-          className={`z-[100001] w-[140px] h-[80px] ${
+          className={`ml-3 rounded-lg z-[100001] w-[158.4px] h-[80px] ${
             dimensions.x < 730 ? "image-container" : ""
           }`}
         >
@@ -91,9 +91,9 @@ export default function Header({
             )}
             src="/logo.png"
             alt="logo"
-            width="140"
+            width="158.4"
             height="80"
-            className={`w-[288px] h-full flex items-center ml-2 cursor-pointer`}
+            className={`w-[288px] rounded-lg bg-[whitesmoke] h-full flex items-center ml-2 cursor-pointer`}
           />
         </button>
         {dimensions.x < 750 ? (

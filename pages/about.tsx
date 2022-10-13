@@ -132,7 +132,8 @@ function First() {
           height: "100vh",
         }}
       >
-        <Image src="/logo.png" alt="logo" width={140 * 2} height={80 * 2} />
+        <Image src="/logo.png" alt="logo" width="158.4"
+            height="80" />
         <h1
           style={{ fontFamily: "'Poppins'" }}
           className="text-[3.5rem] text-center mt-4"
