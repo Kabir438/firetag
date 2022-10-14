@@ -240,12 +240,6 @@ function Second() {
           <h4 className="font-dancing text-4xl text-orange-600">
             Lead Programmer
           </h4>
-          <h4 className="font-dancing text-4xl text-orange-600">
-            Lorem, ipsum.
-          </h4>
-          <h4 className="font-dancing text-4xl text-orange-600">
-            Lorem, ipsum.
-          </h4>
         </div>
         <div className="anAvatar w-[20rem] h-full flex flex-col items-center justify-evenly">
           <img
