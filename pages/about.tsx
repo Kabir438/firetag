@@ -39,9 +39,11 @@ export default function About() {
               }}
             >
               <h1 className="w-full text-center text-[antiquewhite] text-2xl">
-                Lorem
+                Amrit
               </h1>
-
+              <h2 className="w-full text-center text-[whitesmoke] text-xl">
+                Co Founder
+              </h2>
             </div>
           </div>
           <div className="w-[300px] h-[400px] flex flex-col justidy-center items-start hover:scale-95 transition-all ease-in-out">
@@ -61,9 +63,11 @@ export default function About() {
               }}
             >
               <h1 className="w-full text-center text-[antiquewhite] text-2xl">
-                Lorem
+                Kabir
               </h1>
-
+              <h2 className="w-full text-center text-[whitesmoke] text-xl">
+                Lorem, ipsum.
+              </h2>
             </div>
           </div>
           <div className="w-[300px] h-[400px] flex flex-col justidy-center items-start hover:scale-95 transition-all ease-in-out">
@@ -83,9 +87,11 @@ export default function About() {
               }}
             >
               <h1 className="w-full text-center text-[antiquewhite] text-2xl">
-                Lorem
+                Tejas
               </h1>
-
+              <h2 className="w-full text-center text-[whitesmoke] text-xl">
+                Co Founder
+              </h2>
             </div>
           </div>
         </div>
@@ -232,7 +238,7 @@ function Second() {
           />
           <h3 className="text-5xl font-kdam text-orange-400">Kabir</h3>
           <h4 className="font-dancing text-4xl text-orange-600">
-            Lorem, ipsum dolor.
+            Lead Programmer
           </h4>
           <h4 className="font-dancing text-4xl text-orange-600">
             Lorem, ipsum.
