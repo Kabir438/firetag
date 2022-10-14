@@ -66,7 +66,7 @@ export default function About() {
                 Kabir
               </h1>
               <h2 className="w-full text-center text-[whitesmoke] text-xl">
-                Lorem, ipsum.
+                Lead Programmer
               </h2>
             </div>
           </div>
@@ -250,15 +250,7 @@ function Second() {
             height={393 * 0.6}
           />
           <h3 className="text-5xl font-kdam text-orange-400">Tejas</h3>
-          <h4 className="font-dancing text-4xl text-orange-600">
-            Lorem, ipsum dolor.
-          </h4>
-          <h4 className="font-dancing text-4xl text-orange-600">
-            Lorem, ipsum.
-          </h4>
-          <h4 className="font-dancing text-4xl text-orange-600">
-            Lorem, ipsum.
-          </h4>
+ 
         </div>
         <div className="anAvatar w-[20rem] h-full flex flex-col items-center justify-evenly">
           <img
@@ -269,15 +261,7 @@ function Second() {
             height={393 * 0.6}
           />
           <h3 className="text-5xl font-kdam text-orange-400">Arnav</h3>
-          <h4 className="font-dancing text-4xl text-orange-600">
-            Lorem, ipsum dolor.
-          </h4>
-          <h4 className="font-dancing text-4xl text-orange-600">
-            Lorem, ipsum.
-          </h4>
-          <h4 className="font-dancing text-4xl text-orange-600">
-            Lorem, ipsum.
-          </h4>
+
         </div>
       </div>
     </div>
