@@ -95,6 +95,12 @@ export default function About() {
             </div>
           </div>
         </div>
+        <div className="flex-wrap flex mt-8 justify-center items-center gap-[10px]">
+            <Image src="/arnav.jpeg" alt="arnav" style={{borderRadius: "10px"}} width={305/5} height={480/5}>
+              
+            </Image>
+            <h2 className="text-white text-xl font-openSans">Assistant Developer: Arnav Malhotra</h2>
+        </div>
       </div>
     </>
   );
