@@ -1,0 +1,16 @@
+{
+    "name": "Firetag App",
+    "short_name": "Firetag",
+    "icons": [
+      {
+        "src": "/favicon.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      }
+    ],
+    "theme_color": "#161c24",
+    "background_color": "#161c24",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait"
+}

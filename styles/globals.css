@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kdam+Thmor+Pro&family=Libre+Baskerville&family=Poppins&display=swap&family=Open+Sans:wght@300&display=swap');
+/* @import "./z-index.css" */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.z-\[999999999999999999999999\] {
+  z-index: 999999999999999999999999 !important;
+}
+
+.z-\[9999999999999999999999\] {
+  z-index: 9999999999999999999999 !important;
+}
+
+.z-\[9999999999999999999999\] {
+  z-index: 9999999999999999999999 !important;
+}
+
+.z-\[9999999999999999999999\] {
+  z-index: 9999999999999999999999 !important;
+}
+
+.z-\[9999999999999999999999\] {
+  z-index: 9999999999999999999999 !important;
+}
+
+.z-\[999999999999999999999999\] {
+  z-index: 999999999999999999999999 !important;
+}
+
+.z-\[999999999999999999999999\] {
+  z-index: 999999999999999999999999 !important;
+}
+
+.z-\[999999999999999999999999\] {
+  z-index: 999999999999999999999999 !important;
+}
+
+.z-\[999999999999999999999999\] {
+  z-index: 999999999999999999999999 !important;
+}
+
+.z-\[99999\] {
+  z-index: 99999;
+}
+
+.z-\[9999999999999999999999\] {
+  z-index: 9999999999999999999999 !important;
+}
+
+.z-\[9999999999999999999999\] {
+  z-index: 9999999999999999999999 !important;
+}
+
+.z-\[9999999999999999999999\] {
+  z-index: 9999999999999999999999 !important;
+}
+
+.z-\[9999999999999999999999\] {
+  z-index: 9999999999999999999999 !important;
+}
+
+.z-\[999999999999999999999999\] {
+  z-index: 9999999999999;
+}
+
+.z-\[999999999999999999999999\] {
+  z-index: 999999999999999999999999 !important;
+}
+
+.z-\[999999999999999999999999\] {
+  z-index: 999999999999999999999999 !important;
+}
+
+.z-\[999999999999999999999999\] {
+  z-index: 999999999999999999999999 !important;
+}
+
+.z-\[99999999999999999999\] {
+  z-index: 99999999999999999999 !important;
+}
+
+.z-\[99999999999999999999\] {
+  z-index: 99999999999999999999 !important;
+}
+
+.z-\[99999999999999999999\] {
+  z-index: 99999999999999999999 !important;
+}
+
+.z-\[99999999999999999999\] {
+  z-index: 99999999999999999999 !important;
+}
+
+.z-\[9999999999999999999999\] {
+  z-index: 9999999999999999999999 !important;
+}
+
+.z-\[9999999999999999999999\] {
+  z-index: 9999999999999999999999 !important;
+}
+
+.z-\[9999999999999999999999\] {
+  z-index: 9999999999999999999999 !important;
+}
+
+.z-\[9999999999999999999999\] {
+  z-index: 9999999999999999999999 !important;
+}
+
+.z-\[9999999999\] {
+  z-index: 9999999999;
+}
+
+
+#__next {
+  /* margin-top: 6rem; */
+  min-height: 100vh;
+  width: 100vw;
+}
+* {
+  box-sizing: border-box;
+}
+
+main {
+  padding-top: 6rem;
+}
+
+*[data-animation="ripple"]::selection {
+	background: transparent;
+	/* pointer-events: none; */
+}
+
+header {
+	background: #00a3ac
+}
+
+header.backdropFilter {
+	backdrop-filter: blur(10px);
+}
+
+header.moreBackdropFilter {
+	backdrop-filter: blur(100px);
+}
+
+.transparent {
+  backgorund: #00366600;
+}
+
+.carousel {
+  display: inline-flex;
+  overflow-x: hidden;
+/*  scroll snap is a great feature which will center the image on snap on touch screen devices  */
+  scroll-snap-type: x mandatory;
+/* all below will hide the scrollbar on all browsers.    */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.image-container span {
+  transform: scale(0.9);
+}
+
+.mapContainer {
+  overflow: visible !important;
+}
+
+.details input, textarea {
+  z-index: 9999999999999999999999;
+  width: 100%;
+  padding: 5px;
+  border-radius: 7.5px;
+  background: hsla(0, 0%, 8%, 0.916);
+  transition: all 0.4s ease-in-out, background-color 9999999999999999999999s linear, color 9999999999999999999999s linear;
+  color: whitesmoke;
+  padding-left: 7.5px;
+  padding:0.8em;
+  border-radius: 0.5em;
+}
+
+.details input:focus, textarea:focus {
+  outline: none
+}
+
+.details input:focus-within, textarea:focus-within {
+  box-shadow: 0 0 0 3px #ffeee799;
+}
+
+.details div {
+  z-index: 99999999999999999999999;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-container:not(:last-child) {
+  margin-bottom: 19px;
+}
+
+
+.input-container > input:focus-within + label{
+  padding: 0 0.2em;
+  position:absolute;
+  top: -0.95em;
+  left: 0.05em;
+  background: transparent;
+  color: whitesmoke;
+  background: hsla(0, 0%, 8%, 0.916);
+  border-radius: 15px;
+  padding: 0px 0.3em 0px 0.3em
+}
+
+.input-container > input.full + label{
+  padding:0 0.2em;
+  position:absolute;
+  top: -0.95em;
+  left: 0.05em;
+  background: transparent;
+  color: white;
+  background: rgba(0, 63, 167, 52%);
+  border-radius: 15px;
+  padding: 0px 0.3em 0px 0.3em
+}
+
+.input-container > input + label{
+  padding:0 0.2em;
+  position:absolute;
+  background: transparent;
+  color: white;
+  background: rgba(0, 63, 167, 0%);
+  border-radius: 15px;
+  padding: 0px 0.3em 0px 0.3em;
+  top: 0.75em;
+  left: 0.25em;
+  transition: all 0.4s ease-in-out;
+  cursor: text;
+}
+
+.input-container > textarea:focus-within + label{
+  padding: 0 0.2em;
+  position:absolute;
+  top: -0.95em;
+  left: 0.05em;
+  background: transparent;
+  color: white;
+  background: rgba(0, 63, 167, 32%);
+  border-radius: 15px;
+  padding: 0px 0.3em 0px 0.3em
+}
+
+.input-container > textarea.full + label{
+  padding:0 0.2em;
+  position:absolute;
+  top: -0.95em;
+  left: 0.05em;
+  background: transparent;
+  color: white;
+  background: rgba(0, 63, 167, 52%);
+  border-radius: 15px;
+  padding: 0px 0.3em 0px 0.3em
+}
+
+.input-container > textarea + label{
+  padding:0 0.2em;
+  position:absolute;
+  background: transparent;
+  color: white;
+  background: rgba(0, 63, 167, 0%);
+  border-radius: 15px;
+  padding: 0px 0.3em 0px 0.3em;
+  top: 0.75em;
+  left: 0.25em;
+  transition: all 0.4s ease-in-out;
+  cursor: text;
+}
+
+br {
+  height: 19px !important;
+  content: "";
+  width: auto !important;
+  display: block;
+}
+
+
+.frame-container h2, h3 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.frame-container form {
+  display: inline-block;
+}
+
+.login-box {
+  background: hsl(183deg 100% 50% / 60%);
+  box-shadow: 0 8px 32px 0 rgb(0 193 255 / 36%);
+  backdrop-filter: blur( 6.5px );
+  -webkit-backdrop-filter: blur( 6.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+h2.login-text {
+  text-shadow: 10px -4px 23px #003e95;
+}
+
+h1.login-text {
+  text-shadow: 11px -4px 23px #0400ff;
+}
+
+.login-main  input, textarea {
+  z-index: 9999999999999999999999;
+  width: 100%;
+  padding: 5px;
+  border-radius: 7.5px;
+  background: hsla(0, 0%, 8%, 0.916);
+  transition: all 0.4s ease-in-out, background-color 9999999999999999999999s linear, color 9999999999999999999999s linear;
+  color: whitesmoke;
+  padding-left: 7.5px;
+  padding:0.8em;
+  border-radius: 0.5em;
+}
+
+.login-main input:focus, textarea:focus {
+  outline: none
+}
+
+.login-main input:focus-within, textarea:focus-within {
+  box-shadow: 0 0 0 3px #ffeee799;
+}
+
+.login-main div {
+  z-index: 99999999999999999999999;
+}
+
+#loading-container div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: calc(100% * 0.96);
+  height: calc(100% * 0.96);
+  margin: 8px;
+  border: 18px solid #04c5d0;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #04c5d0 transparent transparent transparent;
+}
+
+#loading-container div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+#loading-container div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+#loading-container div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+main {
+  scroll-snap-type: y x mandatory;
+}
+
+.view {
+  scroll-snap-align: start;
+}
